@@ -1,0 +1,24 @@
+{
+  "name": "@fakit/vue-heading",
+  "version": "0.1.0",
+  "main": "./src/Heading.vue",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fa-kit/vue-heading.git"
+  },
+  "keywords": [
+    "heading",
+    "fakit",
+    "vue"
+  ],
+  "author": "iAmStudio <info@i-am.studio>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fa-kit/vue-heading/issues"
+  },
+  "homepage": "https://github.com/fa-kit/vue-heading#readme",
+  "description": ""
+}
