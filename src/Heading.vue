@@ -2,7 +2,7 @@
     <component
         v-bind:is="`h${level}`"
         :style="headingStyles"
-        :class="`headiing heading--${level}`">
+        :class="`heading heading--${level}`">
             <slot></slot>
         </component>
 </template>
@@ -16,7 +16,7 @@ export default {
      * @property {number} level         — For correct heading level (h[level]).
      * @property {float} lineHeight     — Non important value, have fallback from original styles.
      * @property {boolean} calcOffset   — Trigger to start calculation compensation for test lines.
-     * @property {array} calcMove        — Contain ratio that will be used in calculating additional offset.
+     * @property {array} calcMove       — Contain ratio that will be used in calculating additional offset...
      */
     name: 'Heading',
     props: {
