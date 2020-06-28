@@ -67,7 +67,7 @@ export default {
             if(this.calcOffset){
                 let fullHeight = offsetTop + this.height + offsetBottom;
                 let moveRatio = this.calcMove[0] + this.calcMove[1];
-                let lineSize = this.textLineSize ? parseFloat(this.textLineSize) : this.$root.lineSize ? this.$root.lineSize : parseFloat(window.getComputedStyle(document.documentElement, null).lineHeight);
+                let lineSize = this.textLineSize ? parseFloat(this.textLineSize) : this.$root.lineSize ? this.$root.lineSize : window.getComputedStyle(document.documentElement, null).lineHeight != 'normal' ? parseFloat(window.getComputedStyle(document.documentElement, null).lineHeight) : parseFloat(window.getComputedStyle(document.documentElement, null).fontSize) * 1.1;
                 let restHeight = fullHeight % lineSize;
                 if(restHeight) {
                     offsetTop += (lineSize - restHeight) / moveRatio * this.calcMove[0];
