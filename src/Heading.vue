@@ -88,9 +88,9 @@ export default {
              * @return {object} headingStyles — For heading styles
             */
             return {
-                lineHeight: this.lineHeight ? this.lineHeight : this.originalStyles.lineHeight,
-                marginTop: `${this.computedOffset.top}px`,
-                marginBottom: `${this.computedOffset.bottom}px`,
+                lineHeight: this.lineHeight ? this.lineHeight : this.originalStyles.lineHeight + ' !important',
+                marginTop: `${this.computedOffset.top}px !important`,
+                marginBottom: `${this.computedOffset.bottom}px !important`,
             }
         }
     },
