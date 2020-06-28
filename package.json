@@ -1,6 +1,10 @@
 {
   "name": "@fakit/vue-heading",
+<<<<<<< HEAD
   "version": "0.2.1",
+=======
+  "version": "0.2.0",
+>>>>>>> 35b3ed5871dd35f0c2b7b03f0a48510e4e298e81
   "main": "./src/Heading.vue",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
