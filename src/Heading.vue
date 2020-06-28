@@ -2,7 +2,7 @@
     <component
         v-bind:is="`h${level}`"
         :style="headingStyles"
-        :class="`heading heading--${level}`">
+        :class="`heading heading--h${level}`">
             <slot></slot>
         </component>
 </template>
@@ -16,6 +16,7 @@ export default {
      * @property {number} level         — For correct heading level (h[level]).
      * @property {float} lineHeight     — Non important value, have fallback from original styles.
      * @property {boolean} calcOffset   — Trigger to start calculation compensation for test lines.
+     * @property {float} textLineSize   — Value is needed if you need to calculate offset in case you document have no default params.
      * @property {array} calcMove       — Contain ratio that will be used in calculating additional offset...
      */
     name: 'Heading',
@@ -25,6 +26,7 @@ export default {
             required: true
         },
         lineHeight: [Number, String],
+        textLineSize: [Number, String],
         calcOffset: Boolean,
         calcMove: {
             type: Array,
@@ -65,7 +67,7 @@ export default {
             if(this.calcOffset){
                 let fullHeight = offsetTop + this.height + offsetBottom;
                 let moveRatio = this.calcMove[0] + this.calcMove[1];
-                let lineSize = this.$root.lineSize ? this.$root.lineSize : parseFloat(window.getComputedStyle(document.documentElement, null).lineHeight);
+                let lineSize = this.textLineSize ? parseFloat(this.textLineSize) : this.$root.lineSize ? this.$root.lineSize : parseFloat(window.getComputedStyle(document.documentElement, null).lineHeight);
                 let restHeight = fullHeight % lineSize;
                 if(restHeight) {
                     offsetTop += (lineSize - restHeight) / moveRatio * this.calcMove[0];
